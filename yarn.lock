@@ -91,6 +91,11 @@
     "@types/qs" "*"
     "@types/serve-static" "*"
 
+"@types/jasmine@^4.3.1":
+  "integrity" "sha512-Vu8l+UGcshYmV1VWwULgnV/2RDbBaO6i2Ptx7nd//oJPIZGhoI1YLST4VKagD2Pq/Bc2/7zvtvhM7F3p4SN7kQ=="
+  "resolved" "https://registry.npmjs.org/@types/jasmine/-/jasmine-4.3.1.tgz"
+  "version" "4.3.1"
+
 "@types/json-schema@^7.0.9":
   "integrity" "sha512-wOuvG1SN4Us4rez+tylwwwCV1psiNVOkJeM3AUWUNWg/jDQY2+HE/444y5gc+jBmRqASOm2Oeh5c1axHobwRKQ=="
   "resolved" "https://registry.npmjs.org/@types/json-schema/-/json-schema-7.0.11.tgz"

@@ -6,7 +6,7 @@ route.get('/' , (req,res)=> {
     console.log('Recieved Requeest'); 
 // const filename = req.query['filename'];
 
-const filename = req.query.filename as string;
+// const filename = req.query.filename as string;
 
 // const height:number = parseInt(req.query.height as string)
 // const width:number = parseInt(req.query.width as string)
