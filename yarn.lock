@@ -72,6 +72,11 @@
   dependencies:
     "@types/node" "*"
 
+"@types/cookiejar@*":
+  "integrity" "sha512-t73xJJrvdTjXrn4jLS9VSGRbz0nUY3cl2DMGDU48lKl+HR9dbbjW2A9r3g40VA++mQpy6uuHg33gy7du2BKpog=="
+  "resolved" "https://registry.npmjs.org/@types/cookiejar/-/cookiejar-2.1.2.tgz"
+  "version" "2.1.2"
+
 "@types/express-serve-static-core@^4.17.18":
   "integrity" "sha512-DxMhY+NAsTwMMFHBTtJFNp5qiHKJ7TeqOo23zVEM9alT1Ml27Q3xcTH0xwxn7Q0BbMcVEJOs/7aQtUWupUQN3Q=="
   "resolved" "https://registry.npmjs.org/@types/express-serve-static-core/-/express-serve-static-core-4.17.31.tgz"
@@ -140,6 +145,21 @@
   "version" "0.31.0"
   dependencies:
     "@types/node" "*"
+
+"@types/superagent@*":
+  "integrity" "sha512-tLfnlJf6A5mB6ddqF159GqcDizfzbMUB1/DeT59/wBNqzRTNNKsaw79A/1TZ84X+f/EwWH8FeuSkjlCLyqS/zQ=="
+  "resolved" "https://registry.npmjs.org/@types/superagent/-/superagent-4.1.16.tgz"
+  "version" "4.1.16"
+  dependencies:
+    "@types/cookiejar" "*"
+    "@types/node" "*"
+
+"@types/supertest@^2.0.12":
+  "integrity" "sha512-X3HPWTwXRerBZS7Mo1k6vMVR1Z6zmJcDVn5O/31whe0tnjE4te6ZJSJGq1RiqHPjzPdMTfjCFogDJmwng9xHaQ=="
+  "resolved" "https://registry.npmjs.org/@types/supertest/-/supertest-2.0.12.tgz"
+  "version" "2.0.12"
+  dependencies:
+    "@types/superagent" "*"
 
 "@typescript-eslint/eslint-plugin@^5.45.1":
   "integrity" "sha512-cOizjPlKEh0bXdFrBLTrI/J6B/QMlhwE9auOov53tgB+qMukH6/h8YAK/qw+QJGct/PTbdh2lytGyipxCcEtAw=="
@@ -1637,7 +1657,7 @@
   "resolved" "https://registry.npmjs.org/strip-json-comments/-/strip-json-comments-2.0.1.tgz"
   "version" "2.0.1"
 
-"superagent@^8.0.3":
+"superagent@^8.0.5":
   "integrity" "sha512-lQVE0Praz7nHiSaJLKBM/cZyi7J0E4io8tWnGSBdBrqAzhzrjQ/F5iGP9Zr29CJC8N5zYdhG2kKaNcB6dKxp7g=="
   "resolved" "https://registry.npmjs.org/superagent/-/superagent-8.0.5.tgz"
   "version" "8.0.5"
@@ -1653,13 +1673,13 @@
     "qs" "^6.11.0"
     "semver" "^7.3.8"
 
-"supertest@^6.3.2":
-  "integrity" "sha512-mSmbW/sPpBU6K8w8189ZiHdc62zMe7dCHpC2ktS9tc0/d2DN0FaxNbDJJNFknZD4jCrGJpxkiFoVyemvKgOdwA=="
-  "resolved" "https://registry.npmjs.org/supertest/-/supertest-6.3.2.tgz"
-  "version" "6.3.2"
+"supertest@^6.3.3":
+  "integrity" "sha512-EMCG6G8gDu5qEqRQ3JjjPs6+FYT1a7Hv5ApHvtSghmOFJYtsU5S+pSb6Y2EUeCEY3CmEL3mmQ8YWlPOzQomabA=="
+  "resolved" "https://registry.npmjs.org/supertest/-/supertest-6.3.3.tgz"
+  "version" "6.3.3"
   dependencies:
     "methods" "^1.1.2"
-    "superagent" "^8.0.3"
+    "superagent" "^8.0.5"
 
 "supports-color@^7.1.0":
   "integrity" "sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw=="

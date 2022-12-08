@@ -11,9 +11,6 @@ if(typeof req.query.filename != 'string') {
     res.status(400).json({status: 'fail' , mesesage: 'file name must be string'})
   }
 
-//   if(typeof(req.query.width)!= 'number' || typeof(req.query.height) != 'number') {
-//     res.status(400).json({status: 'fail' , mesesage: 'width and height must be number'})
-//   }
   if(+(req.query.width??0) >= 1000 || +(req.query.height??0) >=1000){
   
     res.status(400).json({status: 'fail' , mesesage: 'width and height cant be more than 1000'})

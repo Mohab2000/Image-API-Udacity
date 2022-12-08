@@ -12,7 +12,4 @@ app.use('/image', image_1.default);
 app.listen(8080, function () {
     console.log("Running on port ".concat(port));
 });
-var myFunc = function (num) {
-    return num * num;
-};
-exports.default = myFunc;
+exports.default = app;

@@ -7,8 +7,4 @@ app.use('/image' , route);
 app.listen(8080 , () => {
     console.log(`Running on port ${port}`);
 })
-const myFunc = (num: number): number => {
-    return num * num;
-  };
-  
-  export default myFunc;
+export default app;

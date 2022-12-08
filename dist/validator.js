@@ -52,9 +52,6 @@ function validator(req, res) {
     if (typeof req.query.filename != 'string') {
         res.status(400).json({ status: 'fail', mesesage: 'file name must be string' });
     }
-    //   if(typeof(req.query.width)!= 'number' || typeof(req.query.height) != 'number') {
-    //     res.status(400).json({status: 'fail' , mesesage: 'width and height must be number'})
-    //   }
     if (+((_a = req.query.width) !== null && _a !== void 0 ? _a : 0) >= 1000 || +((_b = req.query.height) !== null && _b !== void 0 ? _b : 0) >= 1000) {
         res.status(400).json({ status: 'fail', mesesage: 'width and height cant be more than 1000' });
     }
