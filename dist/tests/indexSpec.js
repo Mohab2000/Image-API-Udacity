@@ -73,9 +73,17 @@ describe('checks endpoints for images', function () {
         });
     }); });
 });
-// describe('invalid endpoint' , () => {
-//     it('response is returned as 404 as the path is invalid' , async () => {
-//         const response = await request.get('/image/invalid')
-//         expect(response.status).toBe(404);
-//     })
-// })
+describe('invalid endpoint', function () {
+    it('response is returned as 404 as the path is invalid', function () { return __awaiter(void 0, void 0, void 0, function () {
+        var response;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, request.get('/image/invalid')];
+                case 1:
+                    response = _a.sent();
+                    expect(response.status).toBe(404);
+                    return [2 /*return*/];
+            }
+        });
+    }); });
+});
