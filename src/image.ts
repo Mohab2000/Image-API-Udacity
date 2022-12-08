@@ -2,7 +2,7 @@ import express from 'express';
 import {validator, checkFile} from './validator';
 const route = express.Router();
 
-route.get('/' , (req,res)=> {
+route.get('/' , (req : express.Request ,res :express.Response) : void=> {
 console.log('Recieved Requeest'); 
 validator(req,res);
 checkFile(req , res)

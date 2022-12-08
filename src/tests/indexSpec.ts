@@ -1,6 +1,6 @@
 import supertest from 'supertest';
 import app from '../index';
-
+import path from 'path';
 //http://localhost:8080/image?filename=fjord&height=100&width=100
 
 const request = supertest(app);
@@ -26,3 +26,15 @@ describe('invalid endpoint' , () => {
         expect(response.status).toBe(404);
     })
 })
+
+// describe('test image file utilities', () => {
+//     it('checks file exists', async () => {
+//       const inputFile = path.join(
+//         __dirname,
+//         '../../assets/full/encenadaport.jpeg'
+//       );
+//     //   const fileExists = await checkFileExists(inputFile);
+//     //   expect(fileExists).toBe(true);
+//     });
+// }
+
