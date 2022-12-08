@@ -10,7 +10,5 @@ module.exports = {
       sourceType: 'module'
     },
    plugins: ['@typescript-eslint', 'prettier'],
-    rules: {
-     'prettier/prettier': 2, // Means error
-    }
-  }
+  
+  };
