@@ -41,6 +41,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var supertest_1 = __importDefault(require("supertest"));
 var index_1 = __importDefault(require("../index"));
+var resizeImage_1 = __importDefault(require("../resizeImage"));
 //http://localhost:8080/image?filename=fjord&height=100&width=100
 var request = (0, supertest_1.default)(index_1.default);
 describe('Testing app end point', function () {
@@ -84,6 +85,19 @@ describe('invalid endpoint', function () {
                     expect(response.status).toBe(404);
                     return [2 /*return*/];
             }
+        });
+    }); });
+});
+describe('Resizing image function', function () {
+    it('Checks if the paramters are correct', function () { return __awaiter(void 0, void 0, void 0, function () {
+        var imagePath, width, height, imageName;
+        return __generator(this, function (_a) {
+            imagePath = './assets/oldimages/fjord.jpg';
+            width = 100;
+            height = 100;
+            imageName = 'fjord.jpg';
+            expect((0, resizeImage_1.default)(imagePath, width, height, imageName)).not.toBeNull();
+            return [2 /*return*/];
         });
     }); });
 });

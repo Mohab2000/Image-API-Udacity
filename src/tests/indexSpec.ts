@@ -1,7 +1,10 @@
 import supertest from 'supertest';
 import app from '../index';
-//http://localhost:8080/image?filename=fjord&height=100&width=100
+import imageResized from '../resizeImage';
+import {validator, checkFile} from '../validator';
 
+
+//http://localhost:8080/image?filename=fjord&height=100&width=100
 const request = supertest(app);
 
 describe('Testing app end point' , ():void => {
@@ -26,6 +29,19 @@ describe('invalid endpoint' , ():void => {
         expect(response.status).toBe(404);
     })
 })
+
+describe('Resizing image function' , (): void => {
+    it('Checks if the paramters are correct' , async(): Promise<void> => {
+        const imagePath = './assets/oldimages/fjord.jpg';
+        const width = 100;
+        const height = 100;
+        const imageName = 'fjord.jpg'
+        expect (imageResized(imagePath , width , height , imageName)).not.toBeNull();
+    })
+})
+
+
+
 
 
 
