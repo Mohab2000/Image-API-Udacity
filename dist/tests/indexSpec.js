@@ -44,11 +44,11 @@ var index_1 = __importDefault(require("../index"));
 //http://localhost:8080/image?filename=fjord&height=100&width=100
 var request = (0, supertest_1.default)(index_1.default);
 describe('Testing app end point', function () {
-    it('Endpoint response is supposed to be 200', function () { return __awaiter(void 0, void 0, void 0, function () {
+    it('response is returned as 200 as the path is valid', function () { return __awaiter(void 0, void 0, void 0, function () {
         var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, request.get('/image')];
+                case 0: return [4 /*yield*/, request.get('/')];
                 case 1:
                     response = _a.sent();
                     expect(response.status).toBe(200);

@@ -2,29 +2,29 @@ import express from 'express';
 import path from 'path'
 import fs from 'fs';
 import imageResized from './resizeImage';
-export async function validator (req:express.Request , res:express.Response) : Promise<void> {
+export function validator (req:express.Request , res:express.Response) : void {
     //console.log(`${JSON.stringify(req.query)}`);
     // console.log(+(req.query.width??0))
 if(!req.query.filename || !req.query.height || !req.query.width) {
-        res.send("Enter correct parameters")
+  res.status(400).json({ status: 'fail', mesesage: 'Enter correct parameters' })
+  res.end();
       }
 if(typeof req.query.filename != 'string') {
     res.status(400).json({status: 'fail' , mesesage: 'file name must be string'})
+    res.end();
   }
-
-  // if(+(req.query.width??0) >= 1000 || +(req.query.height??0) >=1000){
-  
-  //   res.status(400).json({status: 'fail' , mesesage: 'width and height cant be more than 1000'})
-  // }
 
   if(+(req.query.width??0) >= 1000 || +(req.query.width??0) <=0 ) {
     res.status(400).json({status: 'fail' , mesesage: 'Enter valid width number'})
+    res.end();
   }
   if(+(req.query.height??0) >= 1000 || +(req.query.height??0) <=0 ) {
     res.status(400).json({status: 'fail' , mesesage: 'Enter valid height number'})
+    res.end();
   }
   if(Number.isNaN(+(req.query.width ?? 0)) || Number.isNaN(+(req.query.height ?? 0))) {
     res.status(400).json({status: 'fail' , mesesage: 'width and height must be a number value'})
+    res.end();
   }
   
 
@@ -52,6 +52,7 @@ export async function checkFile(req:express.Request , res:express.Response) : Pr
     else {
 
       res.send("error in image name")
+      
     }
 }
 

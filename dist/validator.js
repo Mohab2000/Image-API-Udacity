@@ -44,16 +44,28 @@ var path_1 = __importDefault(require("path"));
 var fs_1 = __importDefault(require("fs"));
 var resizeImage_1 = __importDefault(require("./resizeImage"));
 function validator(req, res) {
-    var _a, _b;
+    var _a, _b, _c, _d, _e, _f;
     //console.log(`${JSON.stringify(req.query)}`);
+    // console.log(+(req.query.width??0))
     if (!req.query.filename || !req.query.height || !req.query.width) {
-        res.send("Enter correct parameters");
+        res.status(400).json({ status: 'fail', mesesage: 'Enter correct parameters' });
+        res.end();
     }
     if (typeof req.query.filename != 'string') {
         res.status(400).json({ status: 'fail', mesesage: 'file name must be string' });
+        res.end();
     }
-    if (+((_a = req.query.width) !== null && _a !== void 0 ? _a : 0) >= 1000 || +((_b = req.query.height) !== null && _b !== void 0 ? _b : 0) >= 1000) {
-        res.status(400).json({ status: 'fail', mesesage: 'width and height cant be more than 1000' });
+    if (+((_a = req.query.width) !== null && _a !== void 0 ? _a : 0) >= 1000 || +((_b = req.query.width) !== null && _b !== void 0 ? _b : 0) <= 0) {
+        res.status(400).json({ status: 'fail', mesesage: 'Enter valid width number' });
+        res.end();
+    }
+    if (+((_c = req.query.height) !== null && _c !== void 0 ? _c : 0) >= 1000 || +((_d = req.query.height) !== null && _d !== void 0 ? _d : 0) <= 0) {
+        res.status(400).json({ status: 'fail', mesesage: 'Enter valid height number' });
+        res.end();
+    }
+    if (Number.isNaN(+((_e = req.query.width) !== null && _e !== void 0 ? _e : 0)) || Number.isNaN(+((_f = req.query.height) !== null && _f !== void 0 ? _f : 0))) {
+        res.status(400).json({ status: 'fail', mesesage: 'width and height must be a number value' });
+        res.end();
     }
 }
 exports.validator = validator;
@@ -65,6 +77,7 @@ function checkFile(req, res) {
             switch (_c.label) {
                 case 0:
                     imagePath = '../assets/thumbImages';
+                    if (!(req.query.filename == 'fjord' || req.query.filename == "palmtunnel" || req.query.filename == "encenadaport" || req.query.filename == "icelandwaterfall" || req.query.filename == "santamonica")) return [3 /*break*/, 7];
                     _c.label = 1;
                 case 1:
                     _c.trys.push([1, 5, , 6]);
@@ -85,7 +98,11 @@ function checkFile(req, res) {
                     err_1 = _c.sent();
                     console.error(err_1);
                     return [3 /*break*/, 6];
-                case 6: return [2 /*return*/];
+                case 6: return [3 /*break*/, 8];
+                case 7:
+                    res.send("error in image name");
+                    _c.label = 8;
+                case 8: return [2 /*return*/];
             }
         });
     });
