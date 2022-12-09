@@ -1,7 +1,7 @@
 import supertest from 'supertest';
 import app from '../index';
 import imageResized from '../resizeImage';
-import {validator, checkFile} from '../validator';
+
 
 
 //http://localhost:8080/image?filename=fjord&height=100&width=100
